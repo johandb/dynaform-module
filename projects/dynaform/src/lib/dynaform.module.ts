@@ -13,6 +13,7 @@ import { SelectComponent } from './controls/select/select.component';
 import { ColorPickerComponent } from './controls/color-picker/color-picker.component';
 
 import { DynamicFieldDirective } from './directives/dynamic-field.directive';
+import { DynamicFormComponent } from './component/dynamic-form/dynamic-form.component';
 
 @NgModule({
     imports: [
@@ -27,7 +28,8 @@ import { DynamicFieldDirective } from './directives/dynamic-field.directive';
         InputComponent,
         RadiobuttonComponent,
         SelectComponent,
-        ColorPickerComponent
+        ColorPickerComponent,
+        DynamicFormComponent
     ],
     entryComponents: [
         InputComponent,
@@ -37,7 +39,8 @@ import { DynamicFieldDirective } from './directives/dynamic-field.directive';
         ColorPickerComponent
     ],
     exports: [
-        DynamicFieldDirective
+        DynamicFieldDirective,
+        DynamicFormComponent
     ]
 })
 export class DynaformModule { }

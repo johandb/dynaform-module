@@ -12,3 +12,4 @@ export * from './lib/controls/color-picker/color-picker.component';
 
 export * from './lib/model/field.interface';
 export * from './lib/directives/dynamic-field.directive';
+export * from './lib/component/dynamic-form/dynamic-form.component';

@@ -1,7 +1,6 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { Validators } from '@angular/forms';
 
-import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
+import { DynamicFormComponent } from '../../projects/dynaform/src/lib/component/dynamic-form/dynamic-form.component';
 import { Field } from '../../projects/dynaform/src/lib/model/field.interface';
 
 @Component({
@@ -42,7 +41,7 @@ export class AppComponent {
             label: 'Fill color:',
             type: 'colorpicker',
             inputType: 'text',
-            value: '#ddd'
+            value: 'red'
         },
     ];
 

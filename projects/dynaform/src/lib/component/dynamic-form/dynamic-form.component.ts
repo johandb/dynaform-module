@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Field } from '../../../../projects/dynaform/src/lib/model/field.interface';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ValidatorFn } from '@angular/forms';
+
+import { Field } from '../../model/field.interface';
 
 @Component({
     selector: 'dynamic-form',
@@ -12,7 +13,7 @@ export class DynamicFormComponent implements OnInit {
 
     dynamicForm: FormGroup;
 
-    constructor(private fb: FormBuilder) {
+    constructor(public fb: FormBuilder) {
     }
 
     ngOnInit() {
@@ -32,7 +33,7 @@ export class DynamicFormComponent implements OnInit {
         return formGroup;
     }
 
-    bindValidations(validations: any) {
+    bindValidations(validations: any): ValidatorFn {
         if (validations.length > 0) {
             const validList = [];
             validations.forEach(valid => {
@@ -44,7 +45,6 @@ export class DynamicFormComponent implements OnInit {
     }
 
     onSubmit(theForm) {
-        console.log('form values:', theForm.value);
     }
 
 }

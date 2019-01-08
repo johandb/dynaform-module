@@ -7,12 +7,12 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { DynaformModule } from '../../projects/dynaform/src/lib/dynaform.module';
-import { DynamicFormComponent } from '../app/components/dynamic-form/dynamic-form.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        DynamicFormComponent
+        HomeComponent,
     ],
     imports: [
         BrowserModule,
