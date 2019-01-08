@@ -1,5 +1,5 @@
 <div>
-    <h1>Hoi Form</h1>
+    <h1>Dynamic Form</h1>
     <form [formGroup]="dynamicForm" novalidate (ngSubmit)="onSubmit(dynamicForm)">
         <ng-container *ngFor="let field of fields" dynamic-field [field]="field" [group]="dynamicForm"></ng-container>
         <br>
