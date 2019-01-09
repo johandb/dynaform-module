@@ -1,7 +1,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 
-import { DynamicFormComponent } from '../../projects/dynaform/src/lib/component/dynamic-form/dynamic-form.component';
-import { Field } from '../../projects/dynaform/src/lib/model/field.interface';
+import { HomeComponent } from './components/home/home.component';
+import { Field } from 'dynaform';
 
 @Component({
     selector: 'app-root',
@@ -11,7 +11,7 @@ import { Field } from '../../projects/dynaform/src/lib/model/field.interface';
 export class AppComponent {
     title = 'dynamic-form-module';
 
-    @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
+    @ViewChild(HomeComponent) form: HomeComponent;
 
     fields: Field[] = [];
 
