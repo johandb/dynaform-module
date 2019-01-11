@@ -35,6 +35,10 @@ export class HomeComponent extends DynamicFormComponent implements OnInit {
     ngOnInit() {
     }
 
+    onSubmit() {
+        console.log('form values : ', this.dynamicForm.value);
+    }
+
 }
 
 ```
@@ -54,6 +58,8 @@ Create the html template for this component, see below
 
 And finally do something in you AppComponent to build the dynamic forms
 
+NOTE : You can replace the values for value in the Field class with your property value i.e value: myclass.someproperty
+
 ```javascript
 import { Component, ViewChild, OnInit } from '@angular/core';
 
@@ -72,13 +78,15 @@ export class AppComponent {
 
     fields: Field[] = [];
 
+    street: string = 'Main Street';
+
     demoFields: Field[] = [
         {
             name: 'street',
             label: 'Street:',
             type: 'input',
             inputType: 'text',
-            value: 'Main Street'
+            value: this.street
         },
         {
             name: 'city',

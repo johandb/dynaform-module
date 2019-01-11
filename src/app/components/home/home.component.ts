@@ -16,4 +16,7 @@ export class HomeComponent extends DynamicFormComponent implements OnInit {
     ngOnInit() {
     }
 
+    onSubmit() {
+        console.log('form : ', this.dynamicForm);
+    }
 }
