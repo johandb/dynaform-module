@@ -38,7 +38,8 @@ import { DynamicFormComponent } from './component/dynamic-form/dynamic-form.comp
         SelectComponent,
         CheckboxComponent,
         RadiobuttonComponent,
-        ColorPickerComponent
+        ColorPickerComponent,
+        ButtonComponent
     ],
     exports: [
         DynamicFieldDirective,
