@@ -17,4 +17,7 @@ export class ColorPickerComponent implements OnInit {
     ngOnInit() {
     }
 
+    onColorPickerChange(colorCode: string): void {
+        this.group.get(this.field.name).setValue(colorCode);
+    }
 }

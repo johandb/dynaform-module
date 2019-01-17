@@ -1,8 +1,7 @@
 <div>
     <h1>Dynamic Form</h1>
-    <form [formGroup]="dynamicForm" novalidate (ngSubmit)="onSubmit(dynamicForm)">
-        <ng-container *ngFor="let field of fields" dynamic-field [field]="field" [group]="dynamicForm"></ng-container>
-        <br>
-        <button class="btn btn-primary" type="submit">Submit</button>
+    {{ form.value | json }}
+    <form [formGroup]="form" novalidate (submit)="onSubmit($event)">
+        <ng-container *ngFor="let field of fields" dynamic-field [field]="field" [group]="form"></ng-container>
     </form>
 </div>

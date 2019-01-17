@@ -1,7 +1,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 
 import { HomeComponent } from './components/home/home.component';
-import { Field } from 'dynaform';
+import { Field } from '../../projects/dynaform/src/lib/model/field.interface';
 
 @Component({
     selector: 'app-root',
@@ -17,35 +17,44 @@ export class AppComponent {
 
     demoFields: Field[] = [
         {
+            type: 'input',
             name: 'street',
             label: 'Street:',
-            type: 'input',
             inputType: 'text',
             value: 'Main Street'
         },
         {
+            type: 'input',
             name: 'city',
             label: 'City:',
-            type: 'input',
             inputType: 'text',
             value: 'Rotterdam'
         },
         {
+            type: 'input',
             name: 'password',
             label: 'Password:',
-            type: 'input',
             inputType: 'password',
         },
         {
+            type: 'colorpicker',
             name: 'fillColor',
             label: 'Fill color:',
-            type: 'colorpicker',
             inputType: 'text',
             value: 'red'
         },
+        {
+            type: 'button',
+            label: 'Submit'
+        }
     ];
 
     constructor() {
         this.fields = this.demoFields;
     }
+
+    submit(value: any) {
+        console.log('form values : ', value);
+    }
+
 }

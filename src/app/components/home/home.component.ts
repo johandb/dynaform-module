@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { DynamicFormComponent } from 'projects/dynaform/src/public_api';
 import { FormBuilder } from '@angular/forms';
 
@@ -7,16 +7,18 @@ import { FormBuilder } from '@angular/forms';
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css']
 })
-export class HomeComponent extends DynamicFormComponent implements OnInit {
+export class HomeComponent extends DynamicFormComponent implements OnInit, OnChanges {
 
-    constructor(public fb: FormBuilder) {
+    constructor(fb: FormBuilder) {
         super(fb);
     }
 
     ngOnInit() {
     }
 
-    onSubmit() {
-        console.log('form : ', this.dynamicForm);
+    ngOnChanges() {
+        console.log("HomeComponent : ngOnChange")
+        this.form = this.createFormControls();
     }
+
 }

@@ -28,15 +28,16 @@ import { FormBuilder } from '@angular/forms';
 })
 export class HomeComponent extends DynamicFormComponent implements OnInit {
 
-    constructor(public fb: FormBuilder) {
+    constructor(fb: FormBuilder) {
         super(fb);
     }
 
     ngOnInit() {
     }
 
-    onSubmit() {
-        console.log('form values : ', this.dynamicForm.value);
+    ngOnChanges() {
+        console.log("HomeComponent : ngOnChange")
+        this.form = this.createFormControls();
     }
 
 }
@@ -48,10 +49,9 @@ Create the html template for this component, see below
 ```html
 <div>
     <h1>Dynamic Form</h1>
-    <form [formGroup]="dynamicForm" novalidate (ngSubmit)="onSubmit(dynamicForm)">
-        <ng-container *ngFor="let field of fields" dynamic-field [field]="field" [group]="dynamicForm"></ng-container>
-        <br>
-        <button class="btn btn-primary" type="submit">Submit</button>
+    {{ form.value | json }}
+    <form [formGroup]="form" novalidate (submit)="onSubmit($event)">
+        <ng-container *ngFor="let field of fields" dynamic-field [field]="field" [group]="form"></ng-container>
     </form>
 </div>
 ```
@@ -108,6 +108,10 @@ export class AppComponent {
             inputType: 'text',
             value: 'red'
         },
+        {
+            type: 'button',
+            label: 'Submit'
+        }
     ];
 
     constructor() {
@@ -120,8 +124,8 @@ export class AppComponent {
 And your app html
 
 ```html
-<div>
-    <app-home [fields]="fields"></app-home>
+<div class="container">
+    <app-home [fields]="fields" (submit)="submit($event)"></app-home>
 </div>
 ```
 

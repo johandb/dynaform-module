@@ -6,6 +6,7 @@ import { SelectComponent } from '../controls/select/select.component';
 import { RadiobuttonComponent } from '../controls/radiobutton/radiobutton.component';
 import { CheckboxComponent } from '../controls/checkbox/checkbox.component';
 import { ColorPickerComponent } from '../controls/color-picker/color-picker.component';
+import { ButtonComponent } from '../controls/button/button.component';
 
 import { Field } from '../model/field.interface';
 
@@ -14,7 +15,8 @@ const controlMapper = {
     select: SelectComponent,
     radiobutton: RadiobuttonComponent,
     checkbox: CheckboxComponent,
-    colorpicker: ColorPickerComponent
+    colorpicker: ColorPickerComponent,
+    button: ButtonComponent
 };
 
 @Directive({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
-import { Field } from './../../model/field.interface';
+import { Field } from '../../model/field.interface';
 
 @Component({
     selector: 'app-input',
@@ -15,6 +15,7 @@ export class InputComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
+        console.log('inputcomponent : ngoninit');
     }
 
 }
