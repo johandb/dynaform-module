@@ -7,6 +7,7 @@ import { RadiobuttonComponent } from '../controls/radiobutton/radiobutton.compon
 import { CheckboxComponent } from '../controls/checkbox/checkbox.component';
 import { ColorPickerComponent } from '../controls/color-picker/color-picker.component';
 import { ButtonComponent } from '../controls/button/button.component';
+import { TextAreaComponent } from '../controls/text-area/text-area.component';
 
 import { Field } from '../model/field.interface';
 
@@ -16,7 +17,8 @@ const controlMapper = {
     radiobutton: RadiobuttonComponent,
     checkbox: CheckboxComponent,
     colorpicker: ColorPickerComponent,
-    button: ButtonComponent
+    button: ButtonComponent,
+    textarea: TextAreaComponent,
 };
 
 @Directive({

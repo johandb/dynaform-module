@@ -8,6 +8,7 @@ export * from './lib/controls/checkbox/checkbox.component';
 export * from './lib/controls/input/input.component';
 export * from './lib/controls/radiobutton/radiobutton.component';
 export * from './lib/controls/select/select.component';
+export * from './lib/controls/text-area/text-area.component';
 export * from './lib/controls/color-picker/color-picker.component';
 
 export * from './lib/model/field.interface';

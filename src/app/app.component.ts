@@ -76,6 +76,12 @@ export class AppComponent {
             inputType: 'password',
         },
         {
+            type: 'textarea',
+            name: 'vraag',
+            label: 'Uw vraag',
+            rows: 5
+        },
+        {
             type: 'colorpicker',
             name: 'fillColor',
             label: 'Fill color:',

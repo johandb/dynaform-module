@@ -13,6 +13,7 @@ import { DynamicFieldDirective } from 'projects/dynaform/src/lib/directives/dyna
 import { InputComponent, ColorPickerComponent } from 'projects/dynaform/src/public_api';
 import { ButtonComponent } from 'projects/dynaform/src/lib/controls/button/button.component';
 import { SelectComponent } from 'projects/dynaform/src/lib/controls/select/select.component';
+import { TextAreaComponent } from 'projects/dynaform/src/lib/controls/text-area/text-area.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { SelectComponent } from 'projects/dynaform/src/lib/controls/select/selec
         InputComponent,
         ColorPickerComponent,
         ButtonComponent,
-        SelectComponent
+        SelectComponent,
+        TextAreaComponent
     ],
     imports: [
         BrowserModule,
@@ -34,7 +36,8 @@ import { SelectComponent } from 'projects/dynaform/src/lib/controls/select/selec
         InputComponent,
         ColorPickerComponent,
         ButtonComponent,
-        SelectComponent
+        SelectComponent,
+        TextAreaComponent
     ],
     providers: [],
     bootstrap: [AppComponent]

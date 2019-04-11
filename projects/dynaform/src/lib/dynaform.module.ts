@@ -11,6 +11,7 @@ import { InputComponent } from './controls/input/input.component';
 import { RadiobuttonComponent } from './controls/radiobutton/radiobutton.component';
 import { SelectComponent } from './controls/select/select.component';
 import { ButtonComponent } from './controls/button/button.component';
+import { TextAreaComponent } from './controls/text-area/text-area.component';
 import { ColorPickerComponent } from './controls/color-picker/color-picker.component';
 
 import { DynamicFieldDirective } from './directives/dynamic-field.directive';
@@ -31,6 +32,7 @@ import { DynamicFormComponent } from './component/dynamic-form/dynamic-form.comp
         SelectComponent,
         ButtonComponent,
         ColorPickerComponent,
+        TextAreaComponent,
         DynamicFormComponent
     ],
     entryComponents: [
@@ -39,7 +41,8 @@ import { DynamicFormComponent } from './component/dynamic-form/dynamic-form.comp
         CheckboxComponent,
         RadiobuttonComponent,
         ColorPickerComponent,
-        ButtonComponent
+        ButtonComponent,
+        TextAreaComponent
     ],
     exports: [
         DynamicFieldDirective,
