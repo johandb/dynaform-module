@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { DynamicFieldDirective } from 'projects/dynaform/src/lib/directives/dynamic-field.directive';
 import { InputComponent, ColorPickerComponent } from 'projects/dynaform/src/public_api';
 import { ButtonComponent } from 'projects/dynaform/src/lib/controls/button/button.component';
+import { SelectComponent } from 'projects/dynaform/src/lib/controls/select/select.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { ButtonComponent } from 'projects/dynaform/src/lib/controls/button/butto
         DynamicFieldDirective,
         InputComponent,
         ColorPickerComponent,
-        ButtonComponent
+        ButtonComponent,
+        SelectComponent
     ],
     imports: [
         BrowserModule,
@@ -31,7 +33,8 @@ import { ButtonComponent } from 'projects/dynaform/src/lib/controls/button/butto
     entryComponents: [
         InputComponent,
         ColorPickerComponent,
-        ButtonComponent
+        ButtonComponent,
+        SelectComponent
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -1,7 +1,8 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 import { HomeComponent } from './components/home/home.component';
 import { Field } from '../../projects/dynaform/src/lib/model/field.interface';
+import { Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-root',
@@ -21,14 +22,35 @@ export class AppComponent {
             name: 'street',
             label: 'Street:',
             inputType: 'text',
-            value: 'Main Street'
+            value: 'Main Street',
+            validations: [
+                {
+                    name: "required",
+                    validator: Validators.required,
+                    message: "Street Required"
+                },
+            ]
         },
         {
             type: 'input',
             name: 'city',
             label: 'City:',
             inputType: 'text',
-            value: 'Rotterdam'
+            value: 'Rotterdam',
+            validations: [
+                {
+                    name: "required",
+                    validator: Validators.required,
+                    message: "City Required"
+                },
+            ]
+        },
+        {
+            type: 'select',
+            name: 'colors',
+            label: 'Select color',
+            value: "RED",
+            options: ["BLUE", "RED", "GREEN", "YELLOW"]
         },
         {
             type: 'input',
@@ -42,19 +64,11 @@ export class AppComponent {
             label: 'Fill color:',
             inputType: 'text',
             value: 'red'
-        },
-        {
-            type: 'button',
-            label: 'Submit'
         }
     ];
 
     constructor() {
         this.fields = this.demoFields;
-    }
-
-    submit(value: any) {
-        console.log('form values : ', value);
     }
 
 }

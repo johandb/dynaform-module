@@ -29,15 +29,15 @@ export class DynamicFormComponent implements OnInit, OnChanges {
         this.form = this.createFormControls();
     }
 
-    onSubmit(event: Event) {
-        event.preventDefault();
-        event.stopPropagation();
-        if (this.form.valid) {
-            this.submit.emit(this.form.value);
-        } else {
-            this.validateAllFormFields(this.form);
-        }
-    }
+    // onSubmit(event: Event) {
+    //     event.preventDefault();
+    //     event.stopPropagation();
+    //     if (this.form.valid) {
+    //         this.submit.emit(this.form.value);
+    //     } else {
+    //         this.validateAllFormFields(this.form);
+    //     }
+    // }
 
     createFormControls() {
         const group = this.fb.group({});

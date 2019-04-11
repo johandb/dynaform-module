@@ -8,9 +8,13 @@ A small library that adds dynamic forms to your application
   `npm install dynaform`
 
 ## Dependencies
- 
-   bootstrap-4
-   font-awesome
+ ```html
+
+    bootstrap-4
+    font-awesome
+    ngx-color-picker
+
+```
 
 ## Usage
 

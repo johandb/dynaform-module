@@ -17,4 +17,5 @@ export class ButtonComponent implements OnInit {
 
     ngOnInit() {
     }
+
 }

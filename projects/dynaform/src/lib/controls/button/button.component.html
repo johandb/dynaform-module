@@ -1,3 +1,6 @@
-<div>
-    <button class="btn btn-primary" [formGroup]="group" type="submit">{{field.label}}</button>
-</div>
+<ng-container *ngIf="field.inputType == 'submit'">
+    <button class="btn btn-primary mr-3" [formGroup]="group" type="submit">{{field.label}}</button>
+</ng-container>
+<ng-container *ngIf="field.inputType == 'cancel'">
+    <button class="btn btn-secondary mr-3" type="submit" [formGroup]="group">{{field.label}}</button>
+</ng-container>

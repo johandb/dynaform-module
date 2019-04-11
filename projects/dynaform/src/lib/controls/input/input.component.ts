@@ -15,7 +15,7 @@ export class InputComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
-        console.log('inputcomponent : ngoninit');
+        //console.log('inputcomponent : ngoninit');
     }
 
 }

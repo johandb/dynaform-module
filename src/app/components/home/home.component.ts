@@ -21,4 +21,11 @@ export class HomeComponent extends DynamicFormComponent implements OnInit, OnCha
         this.form = this.createFormControls();
     }
 
+    cancel() {
+        console.log('canceled in home');
+    }
+
+    clicked() {
+        console.log('clicked in home:', this.form.value);
+    }
 }
