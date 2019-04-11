@@ -156,7 +156,12 @@ export class AppComponent {
                 },
             ]
         },
-        
+        {
+            type: 'textarea',
+            name: 'vraag',
+            label: 'Uw vraag',
+            rows: 5
+        },
         {
             name: 'fillColor',
             label: 'Fill color:',
