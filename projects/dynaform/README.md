@@ -137,7 +137,24 @@ export class AppComponent {
             name: 'colors',
             label: 'Select color',
             value: "RED",
-            options: ["BLUE", "RED", "GREEN", "YELLOW"]
+            options: [
+                {
+                    value: "BLUE",
+                    enabled: true
+                },
+                {
+                    value: "RED",
+                    enabled: true
+                },
+                {
+                    value: "YELLOW",
+                    enabled: false
+                },
+                {
+                    value: "GREEN",
+                    enabled: true
+                },
+            ]
         },
         
         {
