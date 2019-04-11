@@ -158,8 +158,8 @@ export class AppComponent {
         },
         {
             type: 'textarea',
-            name: 'vraag',
-            label: 'Uw vraag',
+            name: 'question',
+            label: 'Your Question',
             rows: 5
         },
         {
