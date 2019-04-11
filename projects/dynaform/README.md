@@ -14,6 +14,17 @@ A small library that adds dynamic forms to your application
 
 ## Usage
 
+Import the DynaformModule in your app.module.ts
+
+```javascript
+import { DynaformModule } from 'dynaform';
+
+imports: [
+    DynaformModule,
+];
+
+```
+
 Create a new component and extend it from DynamicFormComponent, see below for an example
 
 ```javascript
