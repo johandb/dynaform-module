@@ -78,6 +78,15 @@ Create the html template for this component, see below
         <button (click)="cancel()" class="btn btn-secondary mr-2" type="button">Cancel</button>
     </form>
 </div>
+
+or directly from the extended component
+
+<div>
+    <dynamic-form [fields]="fields"></dynamic-form>
+    <button (click)="onSubmit()" class="btn btn-primary mr-2" type="submit">Sent</button>
+    <button (click)="cancel()" class="btn btn-secondary mr-2" type="button">Cancel</button>
+</div>
+
 ```
 
 And finally do something in you AppComponent to build the dynamic forms
