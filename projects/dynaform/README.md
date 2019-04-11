@@ -72,7 +72,7 @@ Create the html template for this component, see below
 <div>
     <h1>Dynamic Form</h1>
     {{ form.value | json }}
-    <form [formGroup]="form" novalidate">
+    <form [formGroup]="form" novalidate>
         <ng-container *ngFor="let field of fields" dynamic-field [field]="field" [group]="form"></ng-container>
         <button (click)="clicked()" class="btn btn-primary mr-2" type="submit">Submit</button>
         <button (click)="cancel()" class="btn btn-secondary mr-2" type="button">Cancel</button>
