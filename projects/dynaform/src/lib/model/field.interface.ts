@@ -4,12 +4,17 @@ export interface Validator {
     message: string;
 }
 
+export interface SelectOption {
+    value: string;
+    enabled: boolean;
+}
+
 export interface Field {
     name?: string;
     label?: string;
     inputType?: string;
     type: string;
     value?: any;
-    options?: string[];
+    options?: SelectOption[];
     validations?: Validator[];
 }

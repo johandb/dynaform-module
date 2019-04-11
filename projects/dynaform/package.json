@@ -1,6 +1,6 @@
 {
     "name": "dynaform",
-    "version": "0.3.3",
+    "version": "0.3.5",
     "description": "Dynamic forms framework for Angular 7+",
     "author": {
         "name": "Johan den Boer",
