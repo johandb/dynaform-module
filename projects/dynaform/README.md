@@ -104,18 +104,33 @@ export class AppComponent {
             value: this.street
         },
         {
-            name: 'city',
-            label: 'City:',
-            type: 'input',
-            inputType: 'text',
-            value: 'Rotterdam'
-        },
-        {
             name: 'password',
             label: 'Password:',
             type: 'input',
             inputType: 'password',
         },
+        {
+            type: 'input',
+            name: 'city',
+            label: 'City:',
+            inputType: 'text',
+            value: 'Rotterdam',
+            validations: [
+                {
+                    name: "required",
+                    validator: Validators.required,
+                    message: "City Required"
+                },
+            ]
+        },
+        {
+            type: 'select',
+            name: 'colors',
+            label: 'Select color',
+            value: "RED",
+            options: ["BLUE", "RED", "GREEN", "YELLOW"]
+        },
+        
         {
             name: 'fillColor',
             label: 'Fill color:',
