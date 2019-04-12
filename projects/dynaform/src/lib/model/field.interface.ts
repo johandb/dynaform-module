@@ -19,4 +19,5 @@ export interface Field {
     validations?: Validator[];
     rows?: number;
     columns?: number;
+    disabled?: boolean;
 }
