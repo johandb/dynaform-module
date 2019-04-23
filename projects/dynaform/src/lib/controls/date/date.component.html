@@ -3,4 +3,8 @@
     <input (click)="dp.toggle()" placeholder="dd-mm-yyyy" [formControlName]="field.name" value="field.value" class="form-control">
     <simple-date-picker #dp (dateChange)="onDatePickerChange($event)" [(date)]="field.value">
     </simple-date-picker>
+    <ng-container *ngFor="let validation of field.validations;">
+        <div class="alert alert-danger mt-2" *ngIf="group.get(field.name).invalid && (group.get(field.name).touched || group.get(field.name).dirty)">
+            {{validation.message}}</div>
+    </ng-container>
 </div>
