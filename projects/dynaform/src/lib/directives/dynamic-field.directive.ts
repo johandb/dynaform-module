@@ -8,6 +8,7 @@ import { CheckboxComponent } from '../controls/checkbox/checkbox.component';
 import { ColorPickerComponent } from '../controls/color-picker/color-picker.component';
 import { ButtonComponent } from '../controls/button/button.component';
 import { TextAreaComponent } from '../controls/text-area/text-area.component';
+import { DateComponent } from '../controls/date/date.component';
 
 import { Field } from '../model/field.interface';
 
@@ -19,6 +20,7 @@ const controlMapper = {
     colorpicker: ColorPickerComponent,
     button: ButtonComponent,
     textarea: TextAreaComponent,
+    date: DateComponent
 };
 
 @Directive({

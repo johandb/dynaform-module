@@ -13,6 +13,8 @@ import { SelectComponent } from './controls/select/select.component';
 import { ButtonComponent } from './controls/button/button.component';
 import { TextAreaComponent } from './controls/text-area/text-area.component';
 import { ColorPickerComponent } from './controls/color-picker/color-picker.component';
+import { SimpleDatePickerComponent } from './controls/date-picker/simple-date-picker.component';
+import { DateComponent } from './controls/date/date.component';
 
 import { DynamicFieldDirective } from './directives/dynamic-field.directive';
 import { DynamicFormComponent } from './component/dynamic-form/dynamic-form.component';
@@ -33,6 +35,8 @@ import { DynamicFormComponent } from './component/dynamic-form/dynamic-form.comp
         ButtonComponent,
         ColorPickerComponent,
         TextAreaComponent,
+        SimpleDatePickerComponent,
+        DateComponent,
         DynamicFormComponent
     ],
     entryComponents: [
@@ -42,7 +46,9 @@ import { DynamicFormComponent } from './component/dynamic-form/dynamic-form.comp
         RadiobuttonComponent,
         ColorPickerComponent,
         ButtonComponent,
-        TextAreaComponent
+        TextAreaComponent,
+        DateComponent,
+        SimpleDatePickerComponent
     ],
     exports: [
         DynamicFieldDirective,

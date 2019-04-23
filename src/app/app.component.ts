@@ -1,8 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { HomeComponent } from './components/home/home.component';
 import { Field } from '../../projects/dynaform/src/lib/model/field.interface';
-import { Validators } from '@angular/forms';
+import { Validators, FormGroup } from '@angular/forms';
+import { DynamicFormComponent } from 'projects/dynaform/src/lib/component/dynamic-form/dynamic-form.component';
 
 @Component({
     selector: 'app-root',
@@ -12,9 +12,7 @@ import { Validators } from '@angular/forms';
 export class AppComponent {
     title = 'dynamic-form-module';
 
-    @ViewChild(HomeComponent) form: HomeComponent;
-
-    fields: Field[] = [];
+    @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
 
     demoFields: Field[] = [
         {
@@ -88,11 +86,20 @@ export class AppComponent {
             label: 'Fill color:',
             inputType: 'text',
             value: 'red'
+        },
+        {
+            type: 'date',
+            name: 'currentDate',
+            label: 'Date value',
+            inputType: 'text',
+            value: '11-04-2019'
         }
     ];
 
     constructor() {
-        this.fields = this.demoFields;
     }
 
+    onSubmit() {
+        console.log('model:', this.form.value);
+    }
 }

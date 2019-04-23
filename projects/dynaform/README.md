@@ -179,8 +179,9 @@ export class AppComponent {
             value: 'red'
         },
         {
-            type: 'button',
-            label: 'Submit'
+            type: 'date',
+            label: 'Today''s date',
+            inputType: text
         }
     ];
 

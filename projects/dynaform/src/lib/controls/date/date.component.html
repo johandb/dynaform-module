@@ -1,0 +1,6 @@
+<div class="form-group" [formGroup]="group">
+    <label>{{field.label}}</label>
+    <input (click)="dp.toggle()" placeholder="dd-mm-yyyy" [formControlName]="field.name" value="field.value" class="form-control">
+    <simple-date-picker #dp (dateChange)="onDatePickerChange($event)" [(date)]="field.value">
+    </simple-date-picker>
+</div>

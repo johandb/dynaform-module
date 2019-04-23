@@ -1,5 +1,4 @@
 <div class="container">
-    <!-- <app-home [fields]="fields" (submit)="submit($event)"></app-home> -->
-    <!-- <app-home [fields]="fields"></app-home> -->
-    <app-home></app-home>
+    <dynamic-form [fields]="demoFields"></dynamic-form>
+    <button class="btn btn-primary" (click)="onSubmit()" type="submit">Submit</button>
 </div>
