@@ -126,6 +126,7 @@ export class AppComponent {
             label: 'Password:',
             type: 'input',
             inputType: 'password',
+            cls: 'fa-fa-lock'
         },
         {
             type: 'input',

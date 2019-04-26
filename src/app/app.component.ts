@@ -73,6 +73,7 @@ export class AppComponent {
             name: 'password',
             label: 'Password:',
             inputType: 'password',
+            cls: 'fa fa-lock'
         },
         {
             type: 'textarea',

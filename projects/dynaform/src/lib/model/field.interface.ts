@@ -21,4 +21,5 @@ export interface Field {
     columns?: number;
     disabled?: boolean;
     dateFormat?: string;
+    cls?: string;
 }
