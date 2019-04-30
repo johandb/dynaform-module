@@ -22,4 +22,5 @@ export interface Field {
     disabled?: boolean;
     dateFormat?: string;
     cls?: string;
+    placeholder?: string;
 }
