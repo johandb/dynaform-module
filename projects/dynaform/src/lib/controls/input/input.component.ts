@@ -16,6 +16,10 @@ export class InputComponent implements OnInit {
 
     ngOnInit() {
         //console.log('inputcomponent : ngoninit');
+        console.log('field:', this.field);
+        if (this.field.placeholder === undefined) {
+            this.field.placeholder = '';
+        }
     }
 
 }

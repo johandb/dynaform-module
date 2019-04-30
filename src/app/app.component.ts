@@ -20,7 +20,7 @@ export class AppComponent {
             name: 'street',
             label: 'Street:',
             inputType: 'text',
-            placeholder: 'Geen een straat op',
+            placeholder: 'Geef een straat',
             validations: [
                 {
                     name: "required",
