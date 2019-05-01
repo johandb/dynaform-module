@@ -51,7 +51,8 @@ export class AppComponent {
             options: [
                 {
                     value: "BLUE",
-                    enabled: true
+                    enabled: true,
+                    description: 'Blauw kleur'
                 },
                 {
                     value: "RED",

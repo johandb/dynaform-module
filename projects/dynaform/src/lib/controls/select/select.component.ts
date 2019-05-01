@@ -15,6 +15,10 @@ export class SelectComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
+        this.field.options.forEach(element => {
+            if (element.description === undefined || element.description === null) {
+                element.description = element.value;
+            }
+        });
     }
-
 }

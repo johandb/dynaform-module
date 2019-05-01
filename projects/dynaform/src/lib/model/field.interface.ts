@@ -6,6 +6,7 @@ export interface Validator {
 
 export interface SelectOption {
     value: string;
+    description?: string;
     enabled: boolean;
 }
 
