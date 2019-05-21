@@ -15,15 +15,15 @@ export class DateComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
-        console.log('field:', this.field);
+        //console.log('field:', this.field);
     }
 
     onDatePickerChange(dateValue: string): void {
-        console.log('onDatePickerChange:', dateValue);
+        //console.log('onDatePickerChange:', dateValue);
         this.group.get(this.field.name).setValue(dateValue);
-        console.log('group:', this.group);
+        //console.log('group:', this.group);
         this.field.value = dateValue;
-        console.log('field:', this.field);
+        //console.log('field:', this.field);
     }
 
 }

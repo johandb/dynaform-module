@@ -38,7 +38,7 @@ export class SimpleDatePickerComponent implements OnInit {
             this.dateFormat = "dd-MM-yyyy";
         }
         this.parseDate();
-        console.log('date:', this.date, ', length:', this.date.length);
+        //console.log('date:', this.date, ', length:', this.date.length);
         this.build();
     }
 
@@ -145,7 +145,7 @@ export class SimpleDatePickerComponent implements OnInit {
     }
 
     selectDate(d: any) {
-        console.log('you selected :', d, ', ', this.dateFormat);
+        //console.log('you selected :', d, ', ', this.dateFormat);
 
         this.date = this.datePipe.transform(new Date(d.year, d.month - 1, d.day), this.dateFormat);
         this.parseDate();

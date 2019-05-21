@@ -11,6 +11,7 @@ import { DynamicFormComponent } from 'projects/dynaform/src/lib/component/dynami
 })
 export class AppComponent {
     title = 'dynamic-form-module';
+    today = '21-05-2019';
 
     @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
 
@@ -93,7 +94,8 @@ export class AppComponent {
             name: 'currentDate',
             label: 'Date value',
             inputType: 'text',
-            value: '11-04-2019',
+            value: this.today,
+            disabled: true,
             validations: [
                 {
                     name: "required",
@@ -106,7 +108,6 @@ export class AppComponent {
                     message: "Datum formaat niet juist (dd-mm-jjjj)"
                 }
             ],
-
         }
     ];
 
@@ -114,6 +115,6 @@ export class AppComponent {
     }
 
     onSubmit() {
-        console.log('model:', this.form.value);
+        console.log('model:', this.form.form.getRawValue());
     }
 }

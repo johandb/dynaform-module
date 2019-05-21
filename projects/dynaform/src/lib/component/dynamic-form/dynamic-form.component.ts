@@ -49,7 +49,7 @@ export class DynamicFormComponent implements OnInit, OnChanges {
                 this.bindValidations(field.validations || [])
             );
             //console.log('control:', control);
-            control.disabled
+            //control.disabled
             group.addControl(field.name, control);
         });
         return group;
