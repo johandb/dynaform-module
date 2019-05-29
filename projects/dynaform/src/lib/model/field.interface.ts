@@ -18,6 +18,7 @@ export interface Field {
     value?: any;
     options?: SelectOption[];
     validations?: Validator[];
+    selected?: boolean;
     rows?: number;
     columns?: number;
     disabled?: boolean;

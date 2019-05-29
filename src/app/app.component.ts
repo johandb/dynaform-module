@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 
 import { Field } from '../../projects/dynaform/src/lib/model/field.interface';
 import { Validators, FormGroup } from '@angular/forms';
@@ -9,12 +9,62 @@ import { DynamicFormComponent } from 'projects/dynaform/src/lib/component/dynami
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     title = 'dynamic-form-module';
     today = '21-05-2019';
 
     @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
 
+    demoFields: Field[] = [];
+
+    cb = [];
+
+    values = [
+        {
+            id: 1,
+            name: 'ouderling',
+            value: 7,
+            txt: 'Ouderling',
+            selected: true,
+            checked: true
+        },
+        {
+            id: 1,
+            name: 'diaken',
+            txt: 'Diaken',
+            value: 1,
+            selected: false,
+            checked: true
+        },
+        {
+            id: 1,
+            name: 'organist',
+            txt: 'Organist',
+            value: 4,
+            selected: false,
+            checked: true
+        }
+    ]
+
+    ngOnInit(): void {
+        this.createFields();
+    }
+
+    createFields() {
+        var i = 0;
+        this.values.forEach(element => {
+            var field = {
+                name: 'cb[' + i + ']',
+                type: 'checkbox',
+                value: element.txt,
+                selected: element.selected
+            }
+            this.demoFields.push(field);
+            i++;
+        })
+    }
+
+    /*
     demoFields: Field[] = [
         {
             type: 'input',
@@ -95,7 +145,7 @@ export class AppComponent {
             label: 'Date value',
             inputType: 'text',
             value: this.today,
-            disabled: true,
+            disabled: false,
             validations: [
                 {
                     name: "required",
@@ -110,11 +160,16 @@ export class AppComponent {
             ],
         }
     ];
-
+*/
     constructor() {
     }
 
     onSubmit() {
-        console.log('model:', this.form.form.getRawValue());
+        console.log('model:', this.form.form.value);
+        for (var i = 0; i < this.values.length; i++) {
+            if (this.form.form.value['cb[' + i + ']']) {
+                console.log('cb[' + i + '] set, value:', this.values[i].value);
+            }
+        }
     }
 }

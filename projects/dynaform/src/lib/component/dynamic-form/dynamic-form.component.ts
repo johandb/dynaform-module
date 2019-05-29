@@ -44,13 +44,17 @@ export class DynamicFormComponent implements OnInit, OnChanges {
         this.fields.forEach(field => {
             //console.log('field:', field);
             if (field.type === "button") return;
-            const control = this.fb.control({ value: field.value, disabled: field.disabled },
-                //field.value,
-                this.bindValidations(field.validations || [])
-            );
+            if (field.type == "checkbox") {
+                const control = this.fb.control(field.selected);
+                group.addControl(field.name, control);
+            } else {
+                const control = this.fb.control({ value: field.value, disabled: field.disabled },
+                    this.bindValidations(field.validations || [])
+                );
+                group.addControl(field.name, control);
+            }
             //console.log('control:', control);
             //control.disabled
-            group.addControl(field.name, control);
         });
         return group;
     }
