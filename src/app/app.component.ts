@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 
     @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
 
-    demoFields: Field[] = [];
+    //demoFields: Field[] = [];
 
     cb = [];
 
@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
     ]
 
     ngOnInit(): void {
-        this.createFields();
+        //this.createFields();
     }
 
     createFields() {
@@ -64,14 +64,15 @@ export class AppComponent implements OnInit {
         })
     }
 
-    /*
+
     demoFields: Field[] = [
         {
             type: 'input',
             name: 'street',
             label: 'Street:',
             inputType: 'text',
-            placeholder: 'Geef een straat',
+            value: '',
+            //placeholder: 'Geef een straat',
             validations: [
                 {
                     name: "required",
@@ -160,7 +161,7 @@ export class AppComponent implements OnInit {
             ],
         }
     ];
-*/
+
     constructor() {
     }
 
