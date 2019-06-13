@@ -1,8 +1,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 
-import { Field } from '../../projects/dynaform/src/lib/model/field.interface';
-import { Validators, FormGroup } from '@angular/forms';
-import { DynamicFormComponent } from 'projects/dynaform/src/lib/component/dynamic-form/dynamic-form.component';
+import { Validators } from '@angular/forms';
+import { DynamicFormComponent, Field } from 'dynaform';
 
 @Component({
     selector: 'app-root',
@@ -72,7 +71,7 @@ export class AppComponent implements OnInit {
             label: 'Street:',
             inputType: 'text',
             value: '',
-            //placeholder: 'Geef een straat',
+            placeholder: 'Geef een straat',
             validations: [
                 {
                     name: "required",
@@ -127,19 +126,19 @@ export class AppComponent implements OnInit {
             inputType: 'password',
             cls: 'fa fa-lock'
         },
-        {
-            type: 'textarea',
-            name: 'vraag',
-            label: 'Uw vraag',
-            rows: 5
-        },
-        {
-            type: 'colorpicker',
-            name: 'fillColor',
-            label: 'Fill color:',
-            inputType: 'text',
-            value: 'red'
-        },
+        // {
+        //     type: 'textarea',
+        //     name: 'vraag',
+        //     label: 'Uw vraag',
+        //     rows: 5
+        // },
+        // {
+        //     type: 'colorpicker',
+        //     name: 'fillColor',
+        //     label: 'Fill color:',
+        //     inputType: 'text',
+        //     value: 'red'
+        // },
         {
             type: 'date',
             name: 'currentDate',
