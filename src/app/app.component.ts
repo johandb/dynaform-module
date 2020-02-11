@@ -132,13 +132,13 @@ export class AppComponent implements OnInit {
         //     label: 'Uw vraag',
         //     rows: 5
         // },
-        // {
-        //     type: 'colorpicker',
-        //     name: 'fillColor',
-        //     label: 'Fill color:',
-        //     inputType: 'text',
-        //     value: 'red'
-        // },
+        {
+            type: 'colorpicker',
+            name: 'fillColor',
+            label: 'Fill color:',
+            inputType: 'text',
+            value: 'red'
+        },
         {
             type: 'date',
             name: 'currentDate',
