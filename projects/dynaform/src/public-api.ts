@@ -1,7 +1,6 @@
 /*
  * Public API Surface of dynaform
  */
-
 export * from './lib/dynaform.module';
 
 export * from './lib/controls/checkbox/checkbox.component';

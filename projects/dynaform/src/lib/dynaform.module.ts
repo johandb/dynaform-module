@@ -39,17 +39,17 @@ import { DynamicFormComponent } from './component/dynamic-form/dynamic-form.comp
         DateComponent,
         DynamicFormComponent
     ],
-    entryComponents: [
-        InputComponent,
-        SelectComponent,
-        CheckboxComponent,
-        RadiobuttonComponent,
-        ColorPickerComponent,
-        ButtonComponent,
-        TextAreaComponent,
-        DateComponent,
-        SimpleDatePickerComponent
-    ],
+    // entryComponents: [
+    //     InputComponent,
+    //     SelectComponent,
+    //     CheckboxComponent,
+    //     RadiobuttonComponent,
+    //     ColorPickerComponent,
+    //     ButtonComponent,
+    //     TextAreaComponent,
+    //     DateComponent,
+    //     SimpleDatePickerComponent
+    // ],
     exports: [
         DynamicFieldDirective,
         DynamicFormComponent
