@@ -14,9 +14,9 @@ export class AppComponent implements OnInit {
 
     @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
 
-    //demoFields: Field[] = [];
-
     cb = [];
+
+    columnValue = 3;
 
     values = [
         {
@@ -43,26 +43,7 @@ export class AppComponent implements OnInit {
             selected: false,
             checked: true
         }
-    ]
-
-    ngOnInit(): void {
-        //this.createFields();
-    }
-
-    createFields() {
-        var i = 0;
-        this.values.forEach(element => {
-            var field = {
-                name: 'cb[' + i + ']',
-                type: 'checkbox',
-                value: element.txt,
-                selected: element.selected
-            }
-            this.demoFields.push(field);
-            i++;
-        })
-    }
-
+    ];
 
     demoFields: Field[] = [
         {
@@ -74,9 +55,9 @@ export class AppComponent implements OnInit {
             placeholder: 'Geef een straat',
             validations: [
                 {
-                    name: "required",
+                    name: 'required',
                     validator: Validators.required,
-                    message: "Street Required"
+                    message: 'Street Required'
                 },
             ]
         },
@@ -88,9 +69,9 @@ export class AppComponent implements OnInit {
             value: 'Rotterdam',
             validations: [
                 {
-                    name: "required",
+                    name: 'required',
                     validator: Validators.required,
-                    message: "City Required"
+                    message: 'City Required'
                 },
             ]
         },
@@ -98,23 +79,23 @@ export class AppComponent implements OnInit {
             type: 'select',
             name: 'colors',
             label: 'Select color',
-            value: "RED",
+            value: 'RED',
             options: [
                 {
-                    value: "BLUE",
+                    value: 'BLUE',
                     enabled: true,
                     description: 'Blauw kleur'
                 },
                 {
-                    value: "RED",
+                    value: 'RED',
                     enabled: true
                 },
                 {
-                    value: "YELLOW",
+                    value: 'YELLOW',
                     enabled: false
                 },
                 {
-                    value: "GREEN",
+                    value: 'GREEN',
                     enabled: true
                 },
             ]
@@ -126,12 +107,30 @@ export class AppComponent implements OnInit {
             inputType: 'password',
             cls: 'fa fa-lock'
         },
-        // {
-        //     type: 'textarea',
-        //     name: 'vraag',
-        //     label: 'Uw vraag',
-        //     rows: 5
-        // },
+        {
+            type: 'textarea',
+            name: 'vraag',
+            label: 'Uw vraag',
+            rows: 5,
+            value: 'Hallo'
+        },
+        {
+            type: 'radiobutton',
+            label: 'Gender:',
+            name: 'gender',
+            options: [
+                { value: 'Male', enabled: true, description: 'Male' },
+                { value: 'Female', enabled: true, description: 'Female' },
+            ],
+            value: 'Male'
+        },
+        {
+            name: 'robot',
+            label: 'I am not a robot',
+            type: 'checkbox',
+            inputType: 'checkbox',
+            value: true
+        },
         {
             type: 'colorpicker',
             name: 'fillColor',
@@ -148,25 +147,43 @@ export class AppComponent implements OnInit {
             disabled: false,
             validations: [
                 {
-                    name: "required",
+                    name: 'required',
                     validator: Validators.required,
-                    message: "Datum is verplicht"
+                    message: 'Datum is verplicht'
                 },
                 {
-                    name: "pattern",
-                    validator: Validators.pattern("(0[1-9]|1[0-9]|2[0-9]|3[01])-(0[1-9]|1[012])-[0-9]{4}"),
-                    message: "Datum formaat niet juist (dd-mm-jjjj)"
+                    name: 'pattern',
+                    validator: Validators.pattern('(0[1-9]|1[0-9]|2[0-9]|3[01])-(0[1-9]|1[012])-[0-9]{4}'),
+                    message: 'Datum formaat niet juist (dd-mm-jjjj)'
                 }
             ],
         }
     ];
+
+    ngOnInit(): void {
+        // this.createFields();
+    }
+
+    createFields() {
+        let i = 0;
+        this.values.forEach(element => {
+            const field = {
+                name: 'cb[' + i + ']',
+                type: 'checkbox',
+                value: element.txt,
+                selected: element.selected
+            };
+            this.demoFields.push(field);
+            i++;
+        });
+    }
 
     constructor() {
     }
 
     onSubmit() {
         console.log('model:', this.form.form.value);
-        for (var i = 0; i < this.values.length; i++) {
+        for (let i = 0; i < this.values.length; i++) {
             if (this.form.form.value['cb[' + i + ']']) {
                 console.log('cb[' + i + '] set, value:', this.values[i].value);
             }

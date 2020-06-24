@@ -1,16 +1,16 @@
 {
     "name": "dynaform",
-    "version": "0.6.4",
+    "version": "0.6.5",
     "description": "Dynamic forms framework for Angular 9+",
     "author": {
         "name": "Johan den Boer",
         "email": "johanj.denboer@gmail.com"
     },
     "peerDependencies": {
-        "@angular/common": "^9.0.0",
-        "@angular/core": "^9.0.0",
-        "tslib": "^1.10.0",
-        "ngx-color-picker": "^9.0.0"
+        "@angular/common": "^9.1.11",
+        "@angular/core": "^9.1.11",
+        "tslib": "^1.13.0",
+        "ngx-color-picker": "^9.1.0"
     },
     "keywords": [
         "dynamic form",
