@@ -1,5 +1,4 @@
 <div class="form-group" [formGroup]="group">
     <label>{{field.label}}</label>
-    <input class="form-control color-text" [formControlName]="field.name" [value]="field.value" [(colorPicker)]="field.value" [style.background]="field.value" [cpOKButton]="true" [cpCancelButton]="true" [cpOutputFormat]="'hex'" [cpSaveClickOutside]="true"
-        (colorPickerChange)="onColorPickerChange($event)">
+    <input class="form-control color-text" [formControlName]="field.id" [value]="field.value" [(colorPicker)]="field.value" [style.background]="field.value" [cpOKButton]="true" [cpCancelButton]="true" [cpOutputFormat]="'hex'" [cpSaveClickOutside]="true" (colorPickerChange)="onColorPickerChange($event)">
 </div>

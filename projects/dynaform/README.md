@@ -1,19 +1,15 @@
-Dynaform
-========
+# Dynaform
 
 A small library that adds dynamic forms to your application
 
 ## Installation
 
-  `npm install dynaform`
+`npm install dynaform`
 
 ## Dependencies
- ```html
 
-    bootstrap-4
-    font-awesome
-    ngx-color-picker
-
+```html
+bootstrap-4 font-awesome ngx-color-picker
 ```
 
 ## Usage
@@ -23,10 +19,7 @@ Import the DynaformModule in your app.module.ts
 ```javascript
 import { DynaformModule } from 'dynaform';
 
-imports: [
-    DynaformModule,
-];
-
+imports: [DynaformModule];
 ```
 
 Create a new component and extend it from DynamicFormComponent, see below for an example
@@ -37,56 +30,50 @@ import { DynamicFormComponent } from 'dynaform';
 import { FormBuilder } from '@angular/forms';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent extends DynamicFormComponent implements OnInit {
+  constructor(fb: FormBuilder) {
+    super(fb);
+  }
 
-    constructor(fb: FormBuilder) {
-        super(fb);
-    }
+  ngOnInit() {}
 
-    ngOnInit() {
-    }
+  ngOnChanges() {
+    console.log('HomeComponent : ngOnChange');
+    this.form = this.createFormControls();
+  }
 
-    ngOnChanges() {
-        console.log("HomeComponent : ngOnChange")
-        this.form = this.createFormControls();
-    }
+  cancel() {}
 
-    cancel() {
-    }
-    
-    clicked() {
-      console.log('form values:', this.form.value);
-    }
-
+  clicked() {
+    console.log('form values:', this.form.value);
+  }
 }
-
 ```
 
 Create the html template for this component, see below
 
 ```html
 <div>
-    <h1>Dynamic Form</h1>
-    {{ form.value | json }}
-    <form [formGroup]="form" novalidate>
-        <ng-container *ngFor="let field of fields" dynamic-field [field]="field" [group]="form"></ng-container>
-        <button (click)="clicked()" class="btn btn-primary mr-2" type="submit">Submit</button>
-        <button (click)="cancel()" class="btn btn-secondary mr-2" type="button">Cancel</button>
-    </form>
+  <h1>Dynamic Form</h1>
+  {{ form.value | json }}
+  <form [formGroup]="form" novalidate>
+    <ng-container *ngFor="let field of fields" dynamic-field [field]="field" [group]="form"></ng-container>
+    <button (click)="clicked()" class="btn btn-primary mr-2" type="submit">Submit</button>
+    <button (click)="cancel()" class="btn btn-secondary mr-2" type="button">Cancel</button>
+  </form>
 </div>
 
 or directly from the extended component
 
 <div>
-    <dynamic-form [fields]="fields"></dynamic-form>
-    <button (click)="onSubmit()" class="btn btn-primary mr-2" type="submit">Sent</button>
-    <button (click)="cancel()" class="btn btn-secondary mr-2" type="button">Cancel</button>
+  <dynamic-form [fields]="fields"></dynamic-form>
+  <button (click)="onSubmit()" class="btn btn-primary mr-2" type="submit">Sent</button>
+  <button (click)="cancel()" class="btn btn-secondary mr-2" type="button">Cancel</button>
 </div>
-
 ```
 
 And finally do something in you AppComponent to build the dynamic forms
@@ -115,21 +102,21 @@ export class AppComponent {
 
     demoFields: Field[] = [
         {
-            name: 'street',
+            id: 'street',
             label: 'Street:',
             type: 'input',
             inputType: 'text',
             value: this.street
         },
         {
-            name: 'password',
+            id: 'password',
             label: 'Password:',
             type: 'input',
             inputType: 'password',
             cls: 'fa-fa-lock'
         },
         {
-            type: 'input',
+            id: 'input',
             name: 'city',
             label: 'City:',
             inputType: 'text',
@@ -143,8 +130,8 @@ export class AppComponent {
             ]
         },
         {
+            id: 'colors',
             type: 'select',
-            name: 'colors',
             label: 'Select color',
             value: "RED",
             options: [
@@ -167,19 +154,20 @@ export class AppComponent {
             ]
         },
         {
+            id: 'question',
             type: 'textarea',
-            name: 'question',
             label: 'Your Question',
             rows: 5
         },
         {
-            name: 'fillColor',
+            id: 'fillColor',
             label: 'Fill color:',
             type: 'colorpicker',
             inputType: 'text',
             value: 'red'
         },
         {
+            id: 'date',
             type: 'date',
             label: 'Today''s date',
             inputType: text
@@ -189,7 +177,7 @@ export class AppComponent {
     constructor() {
         this.fields = this.demoFields;
     }
-   
+
 }
 
 ```
@@ -198,8 +186,6 @@ And your app html
 
 ```html
 <div class="container">
-    <app-home [fields]="fields"></app-home>
+  <app-home [fields]="fields"></app-home>
 </div>
 ```
-
-
