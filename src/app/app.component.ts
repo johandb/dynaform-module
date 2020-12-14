@@ -45,6 +45,7 @@ export class AppComponent implements OnInit {
         }
     ];
 
+    /*
     demoFields: Field[] =
         [
             { id: "ART_CODE", inputType: "text", type: "input", selected: false, rows: 0, columns: 0, disabled: false },
@@ -55,120 +56,121 @@ export class AppComponent implements OnInit {
             { id: "RV_IND_ESHOP", inputType: "text", type: "input", selected: false, rows: 0, columns: 0, disabled: false },
             { id: "RV_INTERNETONLY", inputType: "text", type: "input", selected: false, rows: 0, columns: 0, disabled: false }
         ];
-    // demoFields: Field[] = [
-    //     {
-    //         type: 'input',
-    //         name: 'street',
-    //         label: 'Street:',
-    //         inputType: 'text',
-    //         value: '',
-    //         placeholder: 'Geef een straat',
-    //         validations: [
-    //             {
-    //                 name: 'required',
-    //                 validator: Validators.required,
-    //                 message: 'Street Required'
-    //             },
-    //         ]
-    //     },
-    //     {
-    //         type: 'input',
-    //         name: 'city',
-    //         label: 'City:',
-    //         inputType: 'text',
-    //         value: 'Rotterdam',
-    //         validations: [
-    //             {
-    //                 name: 'required',
-    //                 validator: Validators.required,
-    //                 message: 'City Required'
-    //             },
-    //         ]
-    //     },
-    //     {
-    //         type: 'select',
-    //         name: 'colors',
-    //         label: 'Select color',
-    //         value: 'RED',
-    //         options: [
-    //             {
-    //                 value: 'BLUE',
-    //                 enabled: true,
-    //                 description: 'Blauw kleur'
-    //             },
-    //             {
-    //                 value: 'RED',
-    //                 enabled: true
-    //             },
-    //             {
-    //                 value: 'YELLOW',
-    //                 enabled: false
-    //             },
-    //             {
-    //                 value: 'GREEN',
-    //                 enabled: true
-    //             },
-    //         ]
-    //     },
-    //     {
-    //         type: 'input',
-    //         name: 'password',
-    //         label: 'Password:',
-    //         inputType: 'password',
-    //         cls: 'fa fa-lock'
-    //     },
-    //     {
-    //         type: 'textarea',
-    //         name: 'vraag',
-    //         label: 'Uw vraag',
-    //         rows: 5,
-    //         value: 'Hallo'
-    //     },
-    //     {
-    //         type: 'radiobutton',
-    //         label: 'Gender:',
-    //         name: 'gender',
-    //         options: [
-    //             { value: 'Male', enabled: true, description: 'Male' },
-    //             { value: 'Female', enabled: true, description: 'Female' },
-    //         ],
-    //         value: 'Male'
-    //     },
-    //     {
-    //         name: 'robot',
-    //         label: 'I am not a robot',
-    //         type: 'checkbox',
-    //         inputType: 'checkbox',
-    //         value: true
-    //     },
-    //     {
-    //         type: 'colorpicker',
-    //         name: 'fillColor',
-    //         label: 'Fill color:',
-    //         inputType: 'text',
-    //         value: 'red'
-    //     },
-    //     {
-    //         type: 'date',
-    //         name: 'currentDate',
-    //         label: 'Date value',
-    //         inputType: 'text',
-    //         //value: this.today,
-    //         disabled: false,
-    //         validations: [
-    //             {
-    //                 name: 'required',
-    //                 validator: Validators.required,
-    //                 message: 'Datum is verplicht'
-    //             },
-    //             {
-    //                 name: 'pattern',
-    //                 validator: Validators.pattern('(0[1-9]|1[0-9]|2[0-9]|3[01])-(0[1-9]|1[012])-[0-9]{4}'),
-    //                 message: 'Datum formaat niet juist (dd-mm-jjjj)'
-    //             }
-    //         ],
-    //     }
-    // ];
+    */
+    demoFields: Field[] = [
+        {
+            type: 'input',
+            id: 'street',
+            label: 'Street:',
+            inputType: 'text',
+            value: '',
+            placeholder: 'Geef een straat',
+            validations: [
+                {
+                    name: 'required',
+                    validator: Validators.required,
+                    message: 'Street Required'
+                },
+            ]
+        },
+        {
+            type: 'input',
+            id: 'city',
+            label: 'City:',
+            inputType: 'text',
+            value: 'Rotterdam',
+            validations: [
+                {
+                    name: 'required',
+                    validator: Validators.required,
+                    message: 'City Required'
+                },
+            ]
+        },
+        {
+            type: 'select',
+            id: 'colors',
+            label: 'Select color',
+            value: 'RED',
+            options: [
+                {
+                    value: 'BLUE',
+                    enabled: true,
+                    description: 'Blauw kleur'
+                },
+                {
+                    value: 'RED',
+                    enabled: true
+                },
+                {
+                    value: 'YELLOW',
+                    enabled: false
+                },
+                {
+                    value: 'GREEN',
+                    enabled: true
+                },
+            ]
+        },
+        {
+            type: 'input',
+            id: 'password',
+            label: 'Password:',
+            inputType: 'password',
+            cls: 'fa fa-lock'
+        },
+        {
+            type: 'textarea',
+            id: 'vraag',
+            label: 'Uw vraag',
+            rows: 5,
+            value: 'Hallo'
+        },
+        {
+            type: 'radiobutton',
+            label: 'Gender:',
+            id: 'gender',
+            options: [
+                { value: 'Male', enabled: true, description: 'Male' },
+                { value: 'Female', enabled: true, description: 'Female' },
+            ],
+            value: 'Male'
+        },
+        {
+            id: 'robot',
+            label: 'I am not a robot',
+            type: 'checkbox',
+            inputType: 'checkbox',
+            value: true
+        },
+        {
+            type: 'colorpicker',
+            id: 'fillColor',
+            label: 'Fill color:',
+            inputType: 'text',
+            value: 'red'
+        },
+        {
+            type: 'date',
+            id: 'currentDate',
+            label: 'Date value',
+            inputType: 'text',
+            //value: this.today,
+            disabled: false,
+            validations: [
+                {
+                    name: 'required',
+                    validator: Validators.required,
+                    message: 'Datum is verplicht'
+                },
+                {
+                    name: 'pattern',
+                    validator: Validators.pattern('(0[1-9]|1[0-9]|2[0-9]|3[01])-(0[1-9]|1[012])-[0-9]{4}'),
+                    message: 'Datum formaat niet juist (dd-mm-jjjj)'
+                }
+            ],
+        }
+    ];
 
     ngOnInit(): void {
         // this.createFields();

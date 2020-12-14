@@ -18,6 +18,6 @@ export class ColorPickerComponent implements OnInit {
     }
 
     onColorPickerChange(colorCode: string): void {
-        this.group.get(this.field.name).setValue(colorCode);
+        this.group.get(this.field.id).setValue(colorCode);
     }
 }

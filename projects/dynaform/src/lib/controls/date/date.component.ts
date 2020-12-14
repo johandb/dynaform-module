@@ -20,7 +20,7 @@ export class DateComponent implements OnInit {
 
     onDatePickerChange(dateValue: string): void {
         //console.log('onDatePickerChange:', dateValue);
-        this.group.get(this.field.name).setValue(dateValue);
+        this.group.get(this.field.id).setValue(dateValue);
         //console.log('group:', this.group);
         this.field.value = dateValue;
         //console.log('field:', this.field);
