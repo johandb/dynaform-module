@@ -45,18 +45,6 @@ export class AppComponent implements OnInit {
         }
     ];
 
-    /*
-    demoFields: Field[] =
-        [
-            { id: "ART_CODE", inputType: "text", type: "input", selected: false, rows: 0, columns: 0, disabled: false },
-            { id: "ART_OMSCHRIJ", inputType: "text", type: "input", selected: false, rows: 0, columns: 0, disabled: false },
-            { id: "ART_MERK", inputType: "text", type: "input", selected: false, rows: 0, columns: 0, disabled: false },
-            { id: "ART_TYPE_MAAT", inputType: "text", type: "input", selected: false, rows: 0, columns: 0, disabled: false },
-            { id: "RV_NIEUW_ARTIKEL", inputType: "text", type: "input", selected: false, rows: 0, columns: 0, disabled: false },
-            { id: "RV_IND_ESHOP", inputType: "text", type: "input", selected: false, rows: 0, columns: 0, disabled: false },
-            { id: "RV_INTERNETONLY", inputType: "text", type: "input", selected: false, rows: 0, columns: 0, disabled: false }
-        ];
-    */
     demoFields: Field[] = [
         {
             type: 'input',
