@@ -7,8 +7,8 @@
         "email": "johanj.denboer@gmail.com"
     },
     "peerDependencies": {
-        "@angular/common": "^11.1.0",
-        "@angular/core": "^11.1.0",
+        "@angular/common": "^13.1.1",
+        "@angular/core": "^13.1.1",
         "ngx-color-picker": "^11.0.0"
     },
     "keywords": [
