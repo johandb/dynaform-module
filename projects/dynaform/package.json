@@ -1,11 +1,27 @@
 {
   "name": "dynaform",
-  "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "^13.1.0",
-    "@angular/core": "^13.1.0"
+  "version": "1.0.1",
+  "description": "Dynamic forms framework for Angular 12+",
+  "author": {
+      "name": "Johan den Boer",
+      "email": "johanj.denboer@gmail.com"
   },
+  "peerDependencies": {
+      "@angular/common": "^13.1.0",
+      "@angular/core": "^13.1.0",
+      "ngx-color-picker": "^11.0.0"
+  },
+  "keywords": [
+      "dynamic form",
+      "forms",
+      "angular"
+  ],
+  "license": "MIT",
   "dependencies": {
-    "tslib": "^2.3.0"
+      "tslib": "^2.3.0"
+  },
+  "repository": {
+      "type": "repo",
+      "url": "https://github.com/johandb/dynaform-module"
   }
 }
