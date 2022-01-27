@@ -4,7 +4,7 @@
     <simple-date-picker #dp (dateChange)="onDatePickerChange($event)" [(date)]="field.value">
     </simple-date-picker>
     <ng-container *ngFor="let validation of field.validations;">
-        <div class="alert alert-danger mt-2" *ngIf="group.get(field.id).invalid && (group.get(field.id).touched || group.get(field.id).dirty)">
+        <div class="alert alert-danger mt-2" *ngIf="group.get(field.id)?.invalid && (group.get(field.id)?.touched || group.get(field.id)?.dirty)">
             {{validation.message}}</div>
     </ng-container>
 </div>

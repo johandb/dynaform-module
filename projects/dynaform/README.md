@@ -9,7 +9,7 @@ A small library that adds dynamic forms to your application
 ## Dependencies
 
 ```html
-bootstrap-4 font-awesome ngx-color-picker
+bootstrap-5 font-awesome ngx-color-picker
 ```
 
 ## Usage

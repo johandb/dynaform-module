@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
-import { Field } from '../../model/field.interface';
+import { Field } from '../../model/field';
 
 @Component({
     selector: 'app-date',
@@ -9,8 +9,8 @@ import { Field } from '../../model/field.interface';
     styleUrls: ['./date.component.css']
 })
 export class DateComponent implements OnInit {
-    field: Field;
-    group: FormGroup;
+    field!: Field;
+    group!: FormGroup;
 
     constructor() { }
 
@@ -18,11 +18,16 @@ export class DateComponent implements OnInit {
         //console.log('field:', this.field);
     }
 
-    onDatePickerChange(dateValue: string): void {
+    onDatePickerChange(dateValue: any): void {
         //console.log('onDatePickerChange:', dateValue);
-        this.group.get(this.field.id).setValue(dateValue);
-        //console.log('group:', this.group);
+        //if(this.group) {
+        let control = this.group.get(this.field.id);
+        control?.setValue(dateValue);
+        //this.group.get(this.field.id).setValue(dateValue);
         this.field.value = dateValue;
+        //}
+        
+        //console.log('group:', this.group);
         //console.log('field:', this.field);
     }
 

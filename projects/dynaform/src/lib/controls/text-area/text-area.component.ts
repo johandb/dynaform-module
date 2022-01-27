@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
-import { Field } from '../../model/field.interface';
+import { Field } from '../../model/field';
 
 @Component({
     selector: 'app-text-area',
@@ -9,8 +9,8 @@ import { Field } from '../../model/field.interface';
     styleUrls: ['./text-area.component.css']
 })
 export class TextAreaComponent implements OnInit {
-    field: Field;
-    group: FormGroup;
+    field!: Field;
+    group!: FormGroup;
 
     constructor() { }
 

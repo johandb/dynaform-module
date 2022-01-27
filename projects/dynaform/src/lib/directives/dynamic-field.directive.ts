@@ -3,32 +3,32 @@ import { FormGroup } from '@angular/forms';
 
 import { InputComponent } from '../controls/input/input.component';
 import { SelectComponent } from '../controls/select/select.component';
-import { RadiobuttonComponent } from '../controls/radiobutton/radiobutton.component';
+import { RadioButtonComponent } from '../controls/radiobutton/radiobutton.component';
 import { CheckboxComponent } from '../controls/checkbox/checkbox.component';
-import { ColorPickerComponent } from '../controls/color-picker/color-picker.component';
-import { ButtonComponent } from '../controls/button/button.component';
 import { TextAreaComponent } from '../controls/text-area/text-area.component';
+import { ColorPickerComponent } from '../controls/color-picker/color-picker.component';
+//import { ButtonComponent } from '../controls/button/button.component';
 import { DateComponent } from '../controls/date/date.component';
 
-import { Field } from '../model/field.interface';
+import { Field } from '../model/field';
 
-const controlMapper = {
+const controlMapper: any = {
     input: InputComponent,
     select: SelectComponent,
-    radiobutton: RadiobuttonComponent,
+    radiobutton: RadioButtonComponent,
     checkbox: CheckboxComponent,
-    colorpicker: ColorPickerComponent,
-    button: ButtonComponent,
     textarea: TextAreaComponent,
-    date: DateComponent
+    date: DateComponent,
+    colorpicker: ColorPickerComponent
+    // button: ButtonComponent,
 };
 
 @Directive({
     selector: '[dynamic-field]'
 })
 export class DynamicFieldDirective {
-    @Input() field: Field;
-    @Input() group: FormGroup;
+    @Input() field!: Field;
+    @Input() group!: FormGroup;
 
     componentRef: any;
 
@@ -36,6 +36,7 @@ export class DynamicFieldDirective {
     }
 
     ngOnInit() {
+        this.viewContainer.clear();
         const factory = this.resolver.resolveComponentFactory(controlMapper[this.field.type]);
         this.componentRef = this.viewContainer.createComponent(factory);
         this.componentRef.instance.field = this.field;

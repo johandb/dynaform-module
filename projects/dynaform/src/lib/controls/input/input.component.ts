@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
-import { Field } from '../../model/field.interface';
+import { Field } from '../../model/field';
 
 @Component({
     selector: 'app-input',
@@ -9,8 +9,8 @@ import { Field } from '../../model/field.interface';
     styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
-    field: Field;
-    group: FormGroup;
+    field!: Field;
+    group!: FormGroup;
 
     constructor() { }
 

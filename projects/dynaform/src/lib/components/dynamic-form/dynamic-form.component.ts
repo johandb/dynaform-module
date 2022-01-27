@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
-import { Field } from "../../model/field.interface";
+import { Field, Validator } from "../../model/field";
 
 @Component({
     exportAs: "dynamicForm",
@@ -14,7 +14,7 @@ export class DynamicFormComponent implements OnInit, OnChanges {
 
     @Output() submit: EventEmitter<any> = new EventEmitter<any>();
 
-    form: FormGroup;
+    form!: FormGroup;
 
     get value() {
         return this.form.value;
@@ -32,6 +32,7 @@ export class DynamicFormComponent implements OnInit, OnChanges {
     createFormControls() {
         const group = this.fb.group({});
         this.fields.forEach(field => {
+            //console.log('field:', field);
             if (field.type === "button") return;
             if (field.type == "checkbox") {
                 const control = this.fb.control(field.selected);
@@ -46,9 +47,9 @@ export class DynamicFormComponent implements OnInit, OnChanges {
         return group;
     }
 
-    bindValidations(validations: any) {
+    bindValidations(validations: any[]) {
         if (validations.length > 0) {
-            const validList = [];
+            const validList: any[] = [];
             validations.forEach(valid => {
                 validList.push(valid.validator);
             });
@@ -60,7 +61,7 @@ export class DynamicFormComponent implements OnInit, OnChanges {
     validateAllFormFields(formGroup: FormGroup) {
         Object.keys(formGroup.controls).forEach(field => {
             const control = formGroup.get(field);
-            control.markAsTouched({ onlySelf: true });
+            control?.markAsTouched({ onlySelf: true });
         });
     }
 }

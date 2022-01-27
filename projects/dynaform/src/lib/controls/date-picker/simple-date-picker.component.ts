@@ -11,16 +11,16 @@ import { DatePipe } from '@angular/common';
 })
 export class SimpleDatePickerComponent implements OnInit {
 
-    @Input() date: string;
-    @Output() dateChange = new EventEmitter<string>();
-    @Input() dateFormat: string
+    @Input() date: string | null = '';
+    @Output() dateChange = new EventEmitter<string | null>();
+    @Input() dateFormat!: string
 
-    originalDate: Date;
+    originalDate!: Date;
 
     showDatePicker = false;
-    selectedDate: Date;
+    selectedDate!: Date;
 
-    dateValues = [];
+    dateValues: any[] = [];
 
     months = ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "October", "November", "December"];
     days = ["Ma", "Di", "Wo", "Do", "Vr", "Za", "Zo"];
@@ -67,20 +67,24 @@ export class SimpleDatePickerComponent implements OnInit {
     private parseDate() {
         if (this.dateFormat == undefined || this.dateFormat == "dd-MM-yyyy") {
             //console.log('DMY')
-            var df1 = this.date.split("-", 3);
-            var d1 = parseInt(df1[0]);
-            var m1 = parseInt(df1[1]);
-            var y1 = parseInt(df1[2]);
-            this.selectedDate = new Date(y1, m1 - 1, d1);
-            this.originalDate = new Date(this.selectedDate);
+            var df1 = this.date?.split("-", 3);
+            if(df1) {
+                var d1 = parseInt(df1[0]);
+                var m1 = parseInt(df1[1]);
+                var y1 = parseInt(df1[2]);
+                this.selectedDate = new Date(y1, m1 - 1, d1);
+                this.originalDate = new Date(this.selectedDate);
+            }
         } else if (this.dateFormat == "yyyy-MM-dd") {
             //console.log('YMD')
-            var df2 = this.date.split("-", 3);
-            var y2 = parseInt(df2[0]);
-            var m2 = parseInt(df2[1]);
-            var d2 = parseInt(df2[2]);
-            this.selectedDate = new Date(y2, m2 - 1, d2);
-            this.originalDate = new Date(this.selectedDate);
+            var df2 = this.date?.split("-", 3);
+            if(df2) {
+                var y2 = parseInt(df2[0]);
+                var m2 = parseInt(df2[1]);
+                var d2 = parseInt(df2[2]);
+                this.selectedDate = new Date(y2, m2 - 1, d2);
+                this.originalDate = new Date(this.selectedDate);
+            }
         }
     }
 
@@ -90,7 +94,7 @@ export class SimpleDatePickerComponent implements OnInit {
         var m = d.getMonth();
         var y = d.getFullYear();
         var dow = d.getDay() == 0 ? 6 : (d.getDay() - 1);
-        var row = [];
+        let row: any[] = [];
         if (y % 4 == 0) {
             this.daysInMonth[1] = 29;
         }
@@ -102,7 +106,7 @@ export class SimpleDatePickerComponent implements OnInit {
         }
 
         for (var k = 1; k <= dow; k++) {
-            var r1 = {
+            var r1: any = {
                 day: this.daysInMonth[prevMonth] - dow + k,
                 month: prevMonth + 1,
                 year: prevYear
@@ -111,7 +115,7 @@ export class SimpleDatePickerComponent implements OnInit {
         }
 
         for (var day = 0; day < this.daysInMonth[m]; day++) {
-            var r2 = {
+            var r2: any = {
                 day: (day + 1),
                 month: m + 1,
                 year: y

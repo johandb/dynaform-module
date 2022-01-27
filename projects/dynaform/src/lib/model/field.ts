@@ -11,7 +11,7 @@ export interface SelectOption {
 }
 
 export interface Field {
-    id?: string;
+    id: string;
     label?: string;
     inputType?: string;
     type: string;

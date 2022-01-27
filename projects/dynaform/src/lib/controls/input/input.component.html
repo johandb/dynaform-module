@@ -5,7 +5,8 @@
         <input formControlName="{{field.id}}" [name]="field.id" [type]="field.inputType" [placeholder]="field.placeholder" class="form-control">
     </div>
     <ng-container *ngFor="let validation of field.validations;">
-        <div class="alert alert-danger mt-2" *ngIf="group.get(field.id).invalid && (group.get(field.id).touched || group.get(field.id).dirty)">
+        <div class="alert alert-danger mt-2" *ngIf="group.get(field.id)?.invalid && (group.get(field.id)?.touched || group.get(field.id)?.dirty)">
             {{validation.message}}</div>
     </ng-container>
+    
 </div>
