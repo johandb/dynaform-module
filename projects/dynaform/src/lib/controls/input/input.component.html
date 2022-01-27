@@ -2,7 +2,7 @@
     <label [for]="field.id">{{field.label}}</label>
     <div class="input-group">
         <span *ngIf="field.cls" class="input-group-addon"><i [class]="field.cls"></i></span>
-        <input formControlName="{{field.id}}" [name]="field.id" [type]="field.inputType" [placeholder]="field.placeholder" class="form-control">
+        <input formControlName="{{field.id}}" [name]="field.id" [type]="field.inputType" [placeholder]="field.placeholder" value="{{field.value}}" class="form-control">
     </div>
     <ng-container *ngFor="let validation of field.validations;">
         <div class="alert alert-danger mt-2" *ngIf="group.get(field.id)?.invalid && (group.get(field.id)?.touched || group.get(field.id)?.dirty)">

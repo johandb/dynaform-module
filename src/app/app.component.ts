@@ -11,14 +11,16 @@ import { DynamicFormComponent, Field } from 'dynaform';
 export class AppComponent {
   @ViewChild(DynamicFormComponent) form!: DynamicFormComponent;
 
+  street: string = 'Main Street';
+
   fields: Field[] = [
     {
       id: 'street',
       type: 'input',
       label: 'Street:',
       inputType: 'text',
-      value: '',
-      placeholder: 'Geef een straat',
+      value: this.street,
+      placeholder: 'Enter a street name',
       validations: [
         {
           name: 'required',
@@ -54,7 +56,7 @@ export class AppComponent {
         {
           value: 'BLUE',
           enabled: true,
-          description: 'Blauw kleur',
+          description: 'Blue color',
         },
         {
           value: 'RED',
@@ -78,11 +80,11 @@ export class AppComponent {
       value: 'red',
     },
     {
-      id: 'vraag',
+      id: 'Question',
       type: 'textarea',
-      label: 'Uw vraag',
+      label: 'Your question',
       rows: 5,
-      value: 'Hallo',
+      value: 'Hi there',
     },
     {
       id: 'currentDate',
@@ -95,14 +97,14 @@ export class AppComponent {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Datum is verplicht',
+          message: 'Date is required',
         },
         {
           name: 'pattern',
           validator: Validators.pattern(
             '(0[1-9]|1[0-9]|2[0-9]|3[01])-(0[1-9]|1[012])-[0-9]{4}'
           ),
-          message: 'Datum formaat niet juist (dd-mm-jjjj)',
+          message: 'Date format not valid (dd-mm-yyyy)',
         },
       ],
     },
