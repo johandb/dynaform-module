@@ -1,5 +1,5 @@
 <div class="form-group" [formGroup]="group">
-    <label>{{field.label}}</label>
+    <label class="mt-3">{{field.label}}</label>
     <select class="form-control mb-2" [formControlName]="field.id">
         <option [value]="item.value" [disabled]="!item.enabled" *ngFor="let item of field.options">{{item.description}}</option>
     </select>

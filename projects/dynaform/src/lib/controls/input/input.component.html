@@ -1,12 +1,12 @@
-<div class="form-group" [formGroup]="group">
+<div class="form-group mt-3" [formGroup]="group">
     <label [for]="field.id">{{field.label}}</label>
     <div class="input-group">
         <span *ngIf="field.cls" class="input-group-addon"><i [class]="field.cls"></i></span>
-        <input formControlName="{{field.id}}" [name]="field.id" [type]="field.inputType" [placeholder]="field.placeholder" value="{{field.value}}" class="form-control">
+        <input [id]="field.id" formControlName="{{field.id}}" [name]="field.id" [type]="field.inputType" [placeholder]="field.placeholder" value="{{field.value}}" class="form-control">
     </div>
     <ng-container *ngFor="let validation of field.validations;">
         <div class="alert alert-danger mt-2" *ngIf="group.get(field.id)?.invalid && (group.get(field.id)?.touched || group.get(field.id)?.dirty)">
-            {{validation.message}}</div>
-    </ng-container>
-    
+            {{validation.message}}
+        </div>
+    </ng-container> 
 </div>

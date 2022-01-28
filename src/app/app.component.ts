@@ -30,6 +30,21 @@ export class AppComponent {
       ],
     },
     {
+      id: 'city',
+      type: 'input',
+      label: 'City:',
+      inputType: 'text',
+      value: this.street,
+      placeholder: 'Enter a city',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'City Required',
+        },
+      ],
+    },
+    {
       id: 'robot',
       label: 'I am not a robot',
       type: 'checkbox',
